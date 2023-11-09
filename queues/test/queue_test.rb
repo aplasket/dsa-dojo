@@ -2,7 +2,7 @@ require 'minitest'
 require 'minitest/autorun'
 require './queues/lib/queue.rb'
 
-class StackTest < Minitest::Test
+class QueueTest < Minitest::Test
   def test_it_enqueues
     queue = Queue.new
     queue.enqueue("A")
@@ -33,6 +33,19 @@ class StackTest < Minitest::Test
     queue.enqueue("B")
     queue.enqueue("C")
     assert_equal(3, queue.count)
+  end
+
+  def test_it_gets_peek
+    queue = Queue.new
+    assert_nil(nil, queue.peek)
+
+    queue.enqueue("A")
+    queue.enqueue("B")
+    queue.enqueue("C")
+    assert_equal("A", queue.peek)
+
+    queue.dequeue
+    assert_equal("B", queue.peek)
   end
 
 end
