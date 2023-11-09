@@ -18,5 +18,18 @@ class Queue
     end
   end
 
- 
+  def count
+    if @head.nil?
+      count = 0
+    else
+      current = @head
+      count = 1
+      until current.next_node.nil?
+        count += 1
+        current = current.next_node
+      end
+    end
+    count
+  end
+
 end
