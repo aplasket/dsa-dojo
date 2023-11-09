@@ -61,5 +61,12 @@ class QueueTest < Minitest::Test
     queue.enqueue("C")
     assert_equal("C", queue.last)
   end
+  
+  def test_it_gets_empty
+    queue = Queue.new
+    assert_equal(true, queue.empty?)
 
+    queue.enqueue("A")
+    assert_equal(false, queue.empty?)
+  end
 end
