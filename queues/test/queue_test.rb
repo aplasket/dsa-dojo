@@ -48,4 +48,18 @@ class QueueTest < Minitest::Test
     assert_equal("B", queue.peek)
   end
 
+  def test_it_gets_last
+    queue = Queue.new
+    assert_nil(nil, queue.last)
+
+    queue.enqueue("A")
+    assert_equal("A", queue.last)
+
+    queue.enqueue("B")
+    assert_equal("B", queue.last)
+
+    queue.enqueue("C")
+    assert_equal("C", queue.last)
+  end
+
 end
