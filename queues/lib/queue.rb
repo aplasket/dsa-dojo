@@ -51,4 +51,9 @@ class Queue
     end
     current.data
   end
+  
+  def empty?
+    return false if @head.nil?
+    true
+  end
 end
