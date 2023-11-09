@@ -38,4 +38,9 @@ class Queue
     current_node
   end
 
+  def peek
+    return nil if @head.nil?
+    @head.data
+  end
+
 end
