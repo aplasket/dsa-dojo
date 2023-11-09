@@ -43,4 +43,12 @@ class Queue
     @head.data
   end
 
+  def last
+    return nil if @head.nil?
+    current = @head
+    until current.next_node.nil?
+      current = current.next_node
+    end
+    current.data
+  end
 end
