@@ -32,4 +32,10 @@ class Queue
     count
   end
 
+  def dequeue
+    current_node = @head.data
+    @head = @head.next_node
+    current_node
+  end
+
 end
