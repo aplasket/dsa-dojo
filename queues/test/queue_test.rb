@@ -27,4 +27,12 @@ class StackTest < Minitest::Test
     assert_nil(nil, queue.head)
   end
 
+  def test_it_gets_counts
+    queue = Queue.new
+    queue.enqueue("A")
+    queue.enqueue("B")
+    queue.enqueue("C")
+    assert_equal(3, queue.count)
+  end
+
 end
